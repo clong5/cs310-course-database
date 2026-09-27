@@ -31,6 +31,8 @@ public class DAOUtility {
                     
                     records.add(record);
 
+                }
+            
             }
             
         }
