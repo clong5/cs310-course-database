@@ -110,7 +110,17 @@ public class RegistrationDAO {
             
             if (conn.isValid(0)) {
                 
-                // INSERT YOUR CODE HERE
+                String query = "DELETE FROM registration " +
+                        "WHERE studentid = ? AND termid = ?";
+                ps = conn.prepareStatement(query);
+                ps.setInt(1, studentid);
+                ps.setInt(2, termid);
+                
+                int rowsAffected = ps.executeUpdate();
+                
+                if (rowsAffected > 0) {
+                    result = true;
+                }
                 
             }
             
